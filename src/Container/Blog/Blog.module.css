@@ -1,0 +1,12 @@
+.blog{
+    color: red;
+    list-style-type: none;
+    cursor: pointer;
+}
+.blog a:hover{
+    color: red;
+}
+
+.blog a{
+    text-decoration: none;
+}

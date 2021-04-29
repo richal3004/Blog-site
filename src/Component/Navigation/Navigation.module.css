@@ -1,0 +1,33 @@
+.Navigation{
+    /* flex-flow: row-reverse; */
+    margin:  0px;
+    padding: 0;
+    /* width: 100%;*/
+    height: 100%; 
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    list-style: none;
+    /* float: right; */
+    
+}
+@media(min-width: 500px){
+    .Navigation{
+        flex-flow: row;
+    }
+}
+
+.Navigation a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 20px 20px;
+    display: flex;
+}
+.Navigation a:hover{
+    background-color: rebeccapurple;
+
+}
+
