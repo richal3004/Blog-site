@@ -1,48 +1,57 @@
 import React, { Component } from 'react';
-import Dante,{ Toggle, Lorem, DanteInlineTooltipConfig , DanteTooltipConfig} from 'Dante2';
+// import Dante,{ Toggle, Lorem, DanteInlineTooltipConfig , DanteTooltipConfig} from 'Dante2';
 import classes from './NewPost.module.css';
+import EditorJS from 'react-editor-js';
+import Header from '@editorjs/header';
+
+
+
 
 class newpost extends Component {
+
+ 
+
     
     render(){
-        let h1=<h1>Richql</h1>;
+        let data={
+            '1': 'test'
+        }
         return(
+
             <div className={classes.Newpost_Container}>
-                {/* <Dante
-                    content
-                    ={h1}
-                    default_wrappers
-                    ={[{ className: 'my-custom-h1', block: 'header-one' }]}
-                    /> */}
-                <Dante 
-                    title="Richal"
-                    content={null}
-                    // body_placeholder={'I\'m a placeholder'}
-                    // onChange={editor => { console.log('editor content: ', editor.emitSerializedOutput()) }}
-                    default_wrappers={[{ className: 'graf--h2', block: 'header-one' }]}
+                
+
+                {/* <div className={classes.Title} role="textbox" aria-placeholder="Enter text here..." contenteditable="true"></div>  */}
+                <div className={classes.Editor}>
+                    <EditorJS
+                        data={data}
+                        tools={{
+                            my_title:{
+                                class:Header,
+                            }, 
+                            
+                        }}
+                        placeholder= "Enter Title"
+                        defaultBlock="my_title"
                     />
+                </div>
 
-                    {/* <Toggle initial={false}>
-                    {({ on, toggle }) => {
-                        return (
-                        <div>        
-                        <Dante
-                        content={null} 
-                        read_only={on}
-                        />
-        
-                        <button onClick={toggle}>
-                        read only
-                        </button>
-                        {on ? ' si' : ' no'}
-                        
-                        </div>
+                <div className={classes.Editor}>
+                    <EditorJS 
 
-                        )
-                    }}
-                    </Toggle>
-                 */}
-                <br />
+                        tools={{
+                            header:{
+                                class: Header,
+                                config:{
+                                    placeholder:"my header",
+                                },                                
+                            },
+                            
+                            
+                        }}
+                        placeholder="Tell Your Story..."
+                    />
+                </div>
             </div>
         );
     }

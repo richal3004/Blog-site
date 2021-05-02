@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Blog.module.css';
-import NewPost from './NewPost/NewPost';
+// import NewPost from './NewPost/NewPost';
 import Aux from '../../hoc/Aux';
 
 
